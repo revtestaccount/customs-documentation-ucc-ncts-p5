@@ -1,0 +1,7 @@
+Mailbox Collect:  https://www.softwaretestnextversion.ros.ie/customs/webservice/v1/rest/mailboxCollect
+
+Mailbox Acknowledge:  https://www.softwaretestnextversion.ros.ie/customs/webservice/v1/rest/mailboxAcknowledge
+
+Transaction ID:  https://www.softwaretestnextversion.ros.ie/customs/webservice/v1/rest/transactionID
+
+NCTSSubmit:  https://www.softwaretestnextversion.ros.ie/customs/webservice/v1/rest/nctsSubmit

@@ -1,0 +1,4 @@
+Changes from the previous version:
+1. TR083C/Declaration is now of type ctypes:DeclarationType108. The new structure removes the fields "requestDate" and "dateLimit" from the "Declaration" section
+
+

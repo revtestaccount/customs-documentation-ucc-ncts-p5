@@ -1,0 +1,272 @@
+<html lang="en">
+<head>
+
+<title>NCTS-P5 Technical Details</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+
+<!-- <link href="web-resources/fonts/Fira/fira.css" rel="stylesheet"> -->
+<link href="web-resources/css/foundation.min.css" rel="stylesheet">
+<link href="web-resources/css/vendor.min.css" rel="stylesheet">
+<link href="web-resources/css/site.css" rel="stylesheet">
+<link href="web-resources/css/myDocs.css" rel="stylesheet">
+<link href="web-resources/css/angular-cookie-law.min.css" rel="stylesheet">
+
+<script
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-sanitize.min.js"></script>
+<script src="web-resources/angular-cookie-law.min.js"></script>
+
+<script>
+        angular.module('documentation', ['angular-cookie-law', 'ngSanitize']);
+        angular.module('documentation').controller('DocumentationController', ['$http', '$sce', function($http, $sce) {
+            var vm = this;
+			vm.success = false;
+			vm.error = false;
+            $http.get('web-resources/data.json').then(function(data) {
+                vm.data = data.data;
+            })
+            vm.sendData = sendData;
+
+			vm.generateHTML = generateHTML;
+			
+			function generateHTML(document) {
+				return '<sup>' + document.explainerIndex + '</sup>' + document.explainer;
+			}
+        }]);
+        
+        function sendData(params) {
+            category = params[0];
+            event_label = params[1];
+            gtag('event', category, {'event_category': category,   'event_label': event_label });
+        }
+    </script>
+<style>
+.grade {
+    background: -webkit-linear-gradient(135deg, #333, #eee, #333, #eee, #333, #eee, #333
+        , #eee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+ul {
+  padding-left: 3em;
+}
+</style>
+
+</head>
+<body data-ng-app="documentation" class="revenue">
+    <cookie-law-banner message="By using this website, you consent to the use of cookies in accordance with our privacy policy." policy-url="https://www.revenue.ie/en/online-services/support/data-and-security/privacy/use-of-cookies.aspx" policy-button="true" policy-text="Find out more about cookies." accept-text="Close"></cookie-law-banner>
+    <div class="revenue">
+        <div id="top-bar">
+            <div class="row">
+                <div class="small-6 medium-5 large-7 columns logo">
+                    <a class="revenueLogo float-left" title="Home" href="http://www.revenue.ie">
+                        <img alt="revenue-Logo" height="209" width="437" src="web-resources/revenue-Logo-white.png">
+                    </a>    
+                </div>
+            </div>
+        </div>
+        <div class="hub-destination-row">
+            <div class="content row">
+                <div class="col-lg-12 col-md-12" id="overview-page">
+                    <div id="overview">
+                        <h1>UCC - New Computerised Transit System Phase 5 (NCTS-P5)</h1>
+                        <div class="hub-index">
+                            <p>
+                                THESE LINKS DO NOT WORK AS THEY ARE. MUST EITHER HARD-CODE OR RE-CONSIDER PAGE LAYOUT.
+                            </p>
+                            <ol>
+                                <li><a title="UCC - New Computerised Transit System Phase 5 (NCTS-P5)" href="/en/online-services/support/software-developers/technical-specifications-for-ecustoms/ncts-p5/index.aspx">Overview</a></li>
+                                <li><a title="Public Interface Testing - Operational September 2023" href="/en/online-services/support/software-developers/technical-specifications-for-ecustoms/ncts-p5/pit.aspx">Public Interface Testing - Operational September 2023</a></li>
+                                <li><a title="UCC - NCTS-P5 Trader Guides" href="/en/online-services/support/software-developers/technical-specifications-for-ecustoms/ncts-p5/trader-guides.aspx">UCC - NCTS-P5 Trader Guides</a></li>
+                                <li>UCC - NCTS - P5 - Schemas and WSDLS</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <p style="line-height: 180%">
+                                This page is under construction, with more documents and further updates to come as the project progresses.
+                            </p>
+                        </div>
+                        <br>
+                        <h2>UCC - NCTS - P5 - Schemas and WSDLS</h2>
+                        <div>
+                            </br>
+                            <p style="line-height: 180%">
+                                This section contains the schemas (XSDs) and WSDLs that outline the structure of the data required to engage with the customs New Computerised Transit System Phase 5 (NCTS–P5).
+                            </p>
+                        </div>
+                    </div>
+                    <div data-ng-controller="DocumentationController as vm">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <div id="show-data">
+                                    <!-- Container  -->
+                                    <div data-ng-repeat="(header, data) in vm.data">
+                                        <div class="section-header">
+                                            <a name="{{data.anchor}}" style="text-decoration:none"><h3 class="{{data.class}}">{{data.title}}</h3></a>
+                                        </div>
+											<i><div class="col-sm-12" style = "padding-left: 0rem !important"; data-ng-if="data.cardText" ng-bind-html="data.cardText"></div></i>
+                                        <div class="col-xs-12" style="padding: 0.3rem !important;">
+                                            <div class="bold">
+                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-4 col-xxs-4">
+                                                    <strong>Document Description</strong>
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-xxs-2">
+                                                    <strong>Type</strong>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xxs-3"style="padding: 0rem !important;">
+                                                    <strong>Environment</strong>
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 col-xxs-3"style="padding-left: 1.25rem !important;">
+                                                    <strong>Date Last Updated</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+											<div class="card"
+                                                data-ng-repeat="document in data.cards track by $index" style="font-size: 1.2rem; margin-bottom: 1rem;">
+												<div class="col-lg-5 col-md-5 col-sm-5 col-xs-4 col-xxs-4">
+                                                    <a data-ng-href="{{document.link}}" target="_blank" data-ng-click="vm.sendData([document.category, document.description])">{{document.description}}</a>
+													<sup data-ng-if="document.explainer">
+														{{document.explainerIndex}}
+													</sup>
+                                                </div>
+												<a name="{{document.anchor}}"> </a>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-xxs-2">{{document.type}}</div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xxs-3"style="padding: 0rem !important;">{{document.environment}}</div>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 col-xxs-3"style="padding left: 0rem !important;">{{document.dateLastUpdated}}</div>
+                                            </div>
+											<div
+                                                data-ng-repeat="document in data.cards track by $index">
+                                                <div class="col-sm-12" style = "padding-left: 0rem !important"; data-ng-if="document.sub_hedaing" ng-bind-html="vm.generateHTML(document)"></div>
+												<i>
+													<div class="col-sm-12 pull-left" style = "padding-left: 0rem !important"; data-ng-if="document.explainer" ng-bind-html="vm.generateHTML(document)"></div>
+												</i>
+												<br/><br/>
+											</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-links row">
+                        <p>
+                            This documentation is served from Revenue's GitHub Customs UCC NCTS-P5 repository, which
+                            can be found <a href="https://github.com/revenue-ie/paye-employers-documentation">here <=== UPDATE THIS LINK!!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Standard Revenue footers>
+        <div class="footer-navigation">
+            <div class="row">
+                <a href="https://www.revenue.ie/en/Home.aspx">Back to homepage</a>
+                <a class="back-to-top" href="#">Back to top</a>
+            </div>
+        </div>
+        <div class="footer" id="footer">
+            <div class="row">
+                <div class="medium-6 large-8 columns">
+                    <div class="large-6 columns">
+                        <ul>
+                            <li>
+                                Information about Revenue
+                            </li>
+                            <li><a title="Role of Revenue" href="/en/corporate/information-about-revenue/role-of-revenue/index.aspx">Role of Revenue</a></li>
+                            <li><a title="Customer service commitments" href="/en/corporate/information-about-revenue/customer-service/index.aspx">Customer service commitments</a></li>
+                            <li><a title="Press office" href="/en/corporate/press-office/index.aspx">Press office</a></li>
+                            <li><a title="Governance" href="/en/corporate/information-about-revenue/governance/index.aspx">Governance</a></li>
+                            <li><a title="Appeals" href="/en/corporate/information-about-revenue/appeals/index.aspx">Appeals</a></li>
+                            <li><a title="Statistics on income, tax and duties" href="/en/corporate/information-about-revenue/statistics/index.aspx">Statistics on income, tax and duties</a></li>
+                            <li><a title="Research" href="/en/corporate/information-about-revenue/research/index.aspx">Research</a></li>
+                            <li><a title="Careers" href="/en/corporate/information-about-revenue/careers/index.aspx">Careers</a></li>
+                            <li><a title="Revenue Museum" href="/en/corporate/information-about-revenue/revenue-museum/index.aspx">Revenue Museum</a></li>
+                            <li><a title="Revenue Centenary" href="/en/rev-100/index.aspx">Revenue Centenary</a></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                Using revenue.ie
+                            </li>
+                            <li><a title="Accessibility statement" href="/en/online-services/support/technical-requirements/accessibility-statement/index.aspx">Accessibility statement</a></li>
+                            <li><a title="Security" href="/en/online-services/support/data-and-security/security/index.aspx">Security</a></li>
+                            <li><a title="Privacy" href="/en/online-services/support/data-and-security/privacy/index.aspx">Privacy</a></li>
+                            <li><a title="Disclaimer" href="/en/online-services/support/data-and-security/disclaimer/index.aspx">Disclaimer</a></li>
+                            <li><a title="Re-use of public sector information" href="/en/corporate/using-revenue/reuse-of-public-sector-information/index.aspx">Re-use of public sector information</a></li>
+                            <li><a title="Cookie preferences" href="/en/online-services/support/data-and-security/privacy/use-of-cookies.aspx">Cookie preferences</a></li>
+                        </ul>
+                    </div>
+                    <div class="large-6 columns">
+                        <ul>
+                            <li>
+                                Statutory obligations
+                            </li>
+                            <li><a title="Freedom of Information" href="/en/corporate/statutory-obligations/freedom-of-information/index.aspx">Freedom of Information</a></li>
+                            <li><a title="Data protection" href="/en/corporate/statutory-obligations/data-protection/index.aspx">Data protection</a></li>
+                            <li><a title="Protected disclosures" href="/en/corporate/statutory-obligations/protected-disclosures/index.aspx">Protected disclosures</a></li>
+                            <li><a title="Procurement" href="/en/corporate/statutory-obligations/procurement/index.aspx">Procurement</a></li>
+                            <li><a title="Regulation of Lobbying Act" href="/en/corporate/statutory-obligations/regulation-of-lobbying-act/index.aspx">Regulation of Lobbying Act</a></li>
+                            <li><a title="Official Languages Act" href="/en/corporate/statutory-obligations/official-languages-act/index.aspx">Official Languages Act</a></li>
+                            <li><a title="Child Safeguarding Statement" href="/en/corporate/statutory-obligations/child-safeguarding-statement/index.aspx">Child Safeguarding Statement</a></li>
+                            <li><a title="Gender pay gap" href="/en/corporate/statutory-obligations/gender-pay-gap/index.aspx">Gender pay gap</a></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                Assist us
+                            </li>
+                            <li><a title="Reporting shadow economy activity (tax evasion)" href="/en/corporate/assist-us/reporting-shadow-economy-activity/index.aspx">Reporting shadow economy activity (tax evasion)</a></li>
+                            <li><a title="Drug and tobacco smuggling" href="/en/corporate/assist-us/drug-and-tobacco-smuggling/index.aspx">Drug and tobacco smuggling</a></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                Consultations and submissions
+                            </li>
+                            <li><a title="Submission to the Commission on Taxation and Welfare" href="/en/corporate/consultations-and-submissions/submission-commission-taxation-welfare/index.aspx">Submission to the Commission on Taxation and Welfare</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="medium-6 large-4 columns">
+                    <ul>
+                        <li>
+                            Communications
+                        </li>
+                        <li><a title="Contact us" href="/en/contact-us/index.aspx">Contact us</a></li>
+                        <li><a title="Twitter" href="/en/corporate/communications/twitter/index.aspx">Twitter</a></li>
+                        <li><a title="Fraudulent emails and SMS (text messages)" href="/en/corporate/communications/fraudulent-emails/index.aspx">Fraudulent emails and SMS (text messages)</a></li>
+                        <li><a class=external-links-white  title="Website feedback" href="https://revenue.eu.qualtrics.com/jfe/form/SV_3EpTMqX6iaPuoYJ">Website feedback</a></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            COVID-19
+                        </li>
+                        <li><a title="COVID-19 Information" href="/en/covid-19-information/index.aspx">COVID-19 Information</a></li>
+
+                    </ul>
+                    <ul>
+                        <li>
+                            Central Register of Beneficial Ownership of Trusts (CRBOT)
+                        </li>
+                        <li><a title="Central Register of Beneficial Ownership of Trusts (CRBOT)" href="/en/crbot/index.aspx">Central Register of Beneficial Ownership of Trusts (CRBOT)</a></li>
+
+                    </ul>
+                    <ul>
+                        <li>
+                            External Links
+                        </li>
+                        <li><a class=external-links-white title="whodoeswhat.ie" href="http://www.whodoeswhat.gov.ie/">whodoeswhat.ie</a></li>
+                        <li><a class=external-links-white title="gov.ie" href="http://www.gov.ie/">gov.ie</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>   <END: Standard Revenue footers-->
+
+    </div>
+
+</body>
+</html>
+	

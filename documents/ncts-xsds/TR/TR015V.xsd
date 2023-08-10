@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="http://www.ros.ie/schemas/customs/ncts/trader"
+    targetNamespace="http://www.ros.ie/schemas/customs/ncts/trader"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    xmlns:ctypes="http://www.ros.ie/schemas/customs/ncts/trader_ctypes"
+    xmlns:htypes="http://www.ros.ie/schemas/customs/ncts/trader_htypes"
+    xmlns:doc="http://www.ros.ie/schemas/customs/ncts/trader_doc"
+    elementFormDefault="unqualified" 
+    attributeFormDefault="unqualified" 
+    version="51.7.0"
+    vc:minVersion="1.1">
+    
+    <!--================================================================================-->
+    <!--===== Imports                                                                   -->
+    <!--================================================================================-->
+    
+    <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_ctypes" schemaLocation="trader_ctypes.xsd"/>
+    <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_doc" schemaLocation="trader_doc.xsd"/>
+    <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_htypes" schemaLocation="trader_htypes.xsd"/>
+    
+    <!--================================================================================-->
+    <!--===== Root Element                                                              -->
+    <!--================================================================================-->
+    <xs:element name="TR015V">
+        <xs:annotation>
+            <xs:documentation>
+                <doc:description value="TRANSIT PRE-LODGED DECLARATION ACKNOWLEDGMENT"/>
+                <!--
+                    C0030
+                    Functional Description:
+                    IF <TRANSIT OPERATION. Declaration type> is in SET {TIR,T2SM}
+                    THEN <CUSTOMS OFFICE OF TRANSIT (DECLARED)> = "N"
+                    ELSE
+                    IF (the first two characters of <CUSTOMS OFFICE OF DEPARTURE.Reference number>
+                    is in SET CL112 (CountryCodesCTC)) AND (the first two characters of <CUSTOMS OFFICE
+                    OF DESTINATION (DECLARED). Reference number> is in SET CL112
+                    (CountryCodesCTC)) AND (the first two characters of <CUSTOMS OFFICE OF
+                    DEPARTURE.Reference number> is EQUAL to the first two characters of CUSTOMS
+                    OFFICE OF DESTINATION (DECLARED). Reference number>)
+                    THEN <CUSTOMS OFFICE OF TRANSIT (DECLARED)> = "O"
+                    ELSE
+                    IF <TRANSIT OPERATION.Declaration type> is EQUAL to 'T2'
+                    THEN <CUSTOMS OFFICE OF TRANSIT (DECLARED)> = "R"
+                    ELSE
+                    IF <TRANSIT OPERATION.Declaration type> is EQUAL 'T' AND at least one instance of
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNMENT ITEM.Declaration type> is
+                    EQUAL to 'T2'
+                    THEN <CUSTOMS OFFICE OF TRANSIT (DECLARED)> = "R"
+                    ELSE
+                    IF the first two characters of <CUSTOMS OFFICE OF DEPARTURE.Reference number>
+                    is in SET CL112 (CountryCodesCTC) OR the first two characters of <CUSTOMS OFFICE
+                    OF DESTINATION (DECLARED). Reference number> is in SET CL112
+                    (CountryCodesCTC)
+                    THEN <CUSTOMS OFFICE OF TRANSIT (DECLARED)> = "R"
+                    ELSE
+                    IF at least one instance of <CONSIGNMENT-COUNTRY OF ROUTING OF
+                    CONSIGNMENT.Country> is in
+                    SET CL112 (CountryCodesCTC)
+                    THEN <CUSTOMS OFFICE OF TRANSIT (DECLARED)> = "R"
+                    ELSE
+                    IF the first two characters of <CUSTOMS OFFICE OF DEPARTURE.Reference number>
+                    is EQUAL to 'AD' OR IF the first two characters of <CUSTOMS OFFICE OF
+                    DESTINATION (DECLARED). Reference number> is EQUAL to 'AD'
+                    THEN <CUSTOMS OFFICE OF TRANSIT (DECLARED)> = "R"
+                    ELSE
+                    IF <CUSTOMS OFFICE OF EXIT FOR TRANSIT (DECLARED)> is PRESENT
+                    THEN <CUSTOMS OFFICE OF TRANSIT (DECLARED)> = "R"
+                    ELSE
+                    <CUSTOMS OFFICE OF TRANSIT (DECLARED)> = "O"
+                -->
+                <doc:condition name="C0030" />
+
+                <!--
+                    C0250
+                    Functional Description:
+                    IF <HOLDER OF THE TRANSIT PROCEDURE.Identification number> is PRESENT
+                    AND <HOLDER OF THE TRANSIT PROCEDURE.Identification number> is a valid identifier in the
+                    European EOS ((Economic Operators Systems) verified by the EU Member State receiving or sending
+                    this message), OR is a valid identifier in the DB of the CTC country receiving or sending this message
+                    THEN
+                    <HOLDER OF THE TRANSIT PROCEDURE.Name> = "N" AND
+                    <HOLDER OF THE TRANSIT PROCEDURE-ADDRESS> = "N"
+                    ELSE
+                    <HOLDER OF THE TRANSIT PROCEDURE.Name> = "R" AND
+                    <HOLDER OF THE TRANSIT PROCEDURE-ADDRESS> = "R";
+                    IF <CONSIGNMENT-CONSIGNOR.Identification number> is PRESENT
+                    AND <CONSIGNMENT-CONSIGNOR.Identification number> is a valid identifier in the European EOS
+                    ((Economic Operators Systems) verified by the EU Member State receiving or sending this message),
+                    OR is a valid identifier in the DB of the CTC country receiving or sending this message
+                    THEN
+                    <CONSIGNMENT-CONSIGNOR.Name> = "N" AND
+                    <CONSIGNMENT-CONSIGNOR-ADDRESS> = "N"
+                    ELSE
+                    <CONSIGNMENT-CONSIGNOR.Name> = "R" AND
+                    <CONSIGNMENT-CONSIGNOR-ADDRESS> = "R";
+                    IF <CONSIGNMENT-CONSIGNEE.Identification number> is PRESENT
+                    AND <CONSIGNMENT-CONSIGNEE.Identification number> is a valid identifier in the European EOS
+                    ((Economic Operators Systems) verified by the EU Member State receiving or sending this message),
+                    OR is a valid identifier in the DB of the CTC country receiving or sending this message
+                    THEN
+                    <CONSIGNMENT-CONSIGNEE.Name> = "N" AND
+                    <CONSIGNMENT-CONSIGNEE-ADDRESS> = "N"
+                    ELSE
+                    <CONSIGNMENT-CONSIGNEE.Name> = "R" AND
+                    <CONSIGNMENT-CONSIGNEE-ADDRESS> = "R";
+                    IF <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR.Identification number> is PRESENT
+                    AND <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR.Identification number is a valid
+                    identifier in the European EOS ((Economic Operators Systems) verified by the EU Member State
+                    receiving or sending this message), OR is a valid identifier in the DB of the CTC country receiving or
+                    sending this message
+                    THEN
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR.Name> = "N" AND
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR-ADDRESS> = "N"
+                    ELSE
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR.Name> = "R" AND
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR-ADDRESS> = "R";
+                    IF <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE.Identification number> is PRESENT
+                    AND <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE.Identification number>
+                    is a valid identifier in the European EOS ((Economic Operators Systems) verified by the EU Member
+                    State receiving or sending this message), OR is a valid identifier in the DB of the CTC country
+                    receiving or sending this message
+                    THEN
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE.Name> = "N" AND
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE-ADDRESS> = "N"
+                    ELSE
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE.Name> = "R" AND
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE-ADDRESS> = "R";
+                    IF <GUARANTOR.Identification number> is PRESENT AND <GUARANTOR.Identification number>
+                    is a valid identifier in the European EOS ((Economic Operators Systems) verified by the EU Member
+                    State receiving or sending this message), OR is a valid identifier in the DB of the CTC country
+                    receiving or sending this message
+                    THEN
+                    <GUARANTOR.Name> = "N" AND
+                    <GUARANTOR-ADDRESS> = "N"
+                    ELSE
+                    <GUARANTOR.Name> = "R" AND
+                    <GUARANTOR-ADDRESS> = "R
+                -->
+                <doc:condition name="C0250"/>
+                
+                <!--
+                    C0511
+                    Functional Description:
+                    IF <Message type> is in SET CL610 (MessageWithCorrelationIdentifier)
+                    THEN <Correlation identifier> = "R"
+                    ELSE IF <Message type> is in SET CL385 (MessageTypeWithoutHeader)
+                    THEN <Correlation identifier> = "N"
+                    ELSE <Correlation identifier> = "O"
+                -->
+                <doc:condition name="C0511"/>
+
+                <!--
+                    C0587
+                    Functional Description:
+                    IF <TRANSIT OPERATION.Security> is in SET {2, 3}
+                    THEN <CUSTOMS OFFICE OF EXIT FOR TRANSIT (DECLARED)> = "O"
+                    ELSE <CUSTOMS OFFICE OF EXIT FOR TRANSIT (DECLARED)> = "N"
+                -->
+                <doc:condition name="C0587" />
+                
+                <!--
+                    C0904
+                    Functional Description:
+                    IF <TRANSIT OPERATION.Declaration type> is PRESENT
+                    THEN
+                    IF <TRANSIT OPERATION.Declaration type> is EQUAL to 'TIR'
+                    THEN <HOLDER OF THE TRANSIT PROCEDURE.TIR holder identification number> = "R"
+                    ELSE <HOLDER OF THE TRANSIT PROCEDURE.TIR holder identification number> = "N"
+                    ELSE
+                    IF <CC015C-TRANSIT OPERATION.Declaration type> is EQUAL to 'TIR' OR <CC013C-TRANSIT
+                    OPERATION.Declaration type> is EQUAL to 'TIR'
+                    THEN <HOLDER OF THE TRANSIT PROCEDURE.TIR holder identification number> = "R"
+                    ELSE <HOLDER OF THE TRANSIT PROCEDURE.TIR holder identification number> = "N"
+                -->
+                <doc:condition name="C0904"/>
+                
+                <!-- 
+                    G0002
+                    XSD contains a non-standard regular expression for this data item.
+                -->
+                <doc:rule name="G0002" />
+                
+                <!-- 
+                    G0030
+                    If a consignment is moving from one Member State to another Member State via a third country which
+                    is not in set of CL009 (CountryCodesCommonTransit) then a <CUSTOMS OFFICE OF TRANSIT
+                    (DECLARED)> shall be declared and located in the specific Member States.
+                -->
+                <doc:rule name="0030" />
+                
+                <!--
+                    R0008
+                    Functional Description:
+                    <Correlation identifier> shall be EQUAL to the <Message identification> of the request/rejected
+                    message.
+                -->
+                <doc:rule name="R0008"/>
+                
+                <!--
+                    R0601
+                    Functional Description:
+                    IF <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNMENT ITEM-ADDITIONAL
+                    REFERENCE.Type> is in SET CL234 (DocumentTypeExcise)
+                    (i.e. Export of excise goods followed by transit (EMCS&AES+NCTS))
+                    THEN
+                    IF <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNMENT ITEM. Declaration type> is
+                    PRESENT
+                    THEN (<CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNMENT ITEM.
+                    Declaration type> is EQUAL to ‘T1’
+                    AND <CONSIGNMENT-HOUSE CONSIGNMENT-PREVIOUS DOCUMENT.Type> is
+                    EQUAL to ‘N830’)
+                    ELSE (<TRANSIT OPERATION.Declaration type> is in SET {‘T1’, ‘TIR’}
+                    AND <CONSIGNMENT-HOUSE CONSIGNMENT-PREVIOUS DOCUMENT.Type> is EQUAL to
+                    ‘N830’);
+                    IF <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNMENT ITEM-SUPPORTING
+                    DOCUMENT.Type> is in SET CL234 (DocumentTypeExcise)
+                    (i.e. Transit movement of EU goods under excise suspension (EMCS+NCTS))
+                    THEN
+                    IF <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNMENT ITEM. Declaration type> is
+                    PRESENT
+                    THEN <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNMENT ITEM.
+                    Declaration type> is in SET {T2, T2F}
+                    ELSE <TRANSIT OPERATION.Declaration type> is in SET {T2, T2F}
+                -->                
+                <doc:rule name="R0601"/>
+                
+                <!--
+                    R0789
+                    Functional Description:
+                    IF <CUSTOMS OFFICE OF TRANSIT (DECLARED)> is PRESENT
+                    THEN the multiplicity of <CONSIGNMENT-ACTIVE BORDER TRANSPORT MEANS> is up to 9x
+                    ELSE the multiplicity of <CONSIGNMENT-ACTIVE BORDER TRANSPORT MEANS> is 1x
+                -->
+                <doc:rule name="R0789"/>
+                
+                <!--
+                    R0850
+                    Functional Description:
+                    IF sender is in EU (CL010 (CountryCodesCommunity))
+                    THEN the value must be a valid EORI or TCUIN (validated by receiver, if located in EU),
+                    ELSE (sender is not in EU) the value must be a TIN number (validated by the message sender only).
+                    The EORI/TCUIN values shall comply with the following pattern: <xs:pattern value=" [A-Z]{2}[\x21-
+                    \x7E]{1,15}"/>
+                -->
+                <doc:rule name="R0850"/>
+                
+                <!--
+                    R0909
+                    Functional Description:
+                    IF the country code (first two characters) in the <CUSTOMS OFFICE OF DESTINATION
+                    (DECLARED) Reference number> is EQUAL to 'SM'
+                    THEN
+                    IF the country code (first two characters) in the <CUSTOMS OFFICE OF
+                    DEPARTURE.Reference number> is EQUAL to 'IT'
+                    THEN <TRANSIT OPERATION.Declaration type> is EQUAL to 'T2SM'
+                    ELSE
+                    IF the country code (first two characters) in the <CUSTOMS OFFICE OF
+                    DEPARTURE.Reference number> is in set CL010 (CountryCodesCommunity) AND NOT EQUAL to
+                    'IT'
+                    THEN <TRANSIT OPERATION.Declaration type> is in SET {T2, T2F} OR
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNMENT ITEM.Declaration type> is
+                    in SET {T2,T2F};
+                    IF the country code (first two characters) in the <CUSTOMS OFFICE OF DESTINATION (ACTUAL)
+                    Reference number> is EQUAL to 'SM'
+                    THEN
+                    IF the country code (first two characters) in the <CUSTOMS OFFICE OF
+                    DEPARTURE.Reference number> is EQUAL to 'IT'
+                    THEN <TRANSIT OPERATION.Declaration type> is EQUAL to 'T2SM'
+                    ELSE
+                    IF the country code (first two characters) in the <CUSTOMS OFFICE OF
+                    DEPARTURE.Reference number> is in set CL010 (CountryCodesCommunity) AND NOT EQUAL to
+                    'IT'
+                    THEN <TRANSIT OPERATION.Declaration type> is in SET {T2, T2F} OR
+                    <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNMENT ITEM.Declaration type> is in SET {T2,
+                    T2F}
+                -->
+                <doc:rule name="R0909"/>
+                
+                <!--
+                    R0911
+                    Functional Description:
+                    IF the country code (first two characters) in the <CUSTOMS OFFICE OF DEPARTURE.Reference
+                    number> is
+                    EQUAL to 'SM' AND
+                    the country code (first two characters) in the <CUSTOMS OFFICE OF
+                    DESTINATION
+                    (DECLARED).Reference> is in SET CL010 (CountryCodesCommunity)
+                    THEN <TRANSIT OPERATION.Declaration type> is in SET {T2, T2F};
+                    IF the country code (first two characters) in the <CUSTOMS OFFICE OF DEPARTURE.Reference
+                    number> is
+                    EQUAL to 'SM' AND
+                    the country code (first two characters) in the <CUSTOMS OFFICE OF
+                    DESTINATION
+                    (ACTUAL).Reference> is in SET CL010 (CountryCodesCommunity)
+                    THEN <TRANSIT OPERATION.Declaration type> is in SET {T2, T2F}
+                -->
+                <doc:rule name="R0911"/>
+                
+                <!-- 
+                    R0987
+                    Each <Sequence number> is unique for the Data Group it belongs to. The sequence numbers shall be
+                    sequential, starting from '1' for the first iteration of the Data Group and increasing by '1' for each
+                    iteration.
+                -->
+                <doc:rule name="R0987" />
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="htypes:MESSAGE"/>
+                <xs:element name="Declaration" type="ctypes:DeclarationType101">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <doc:description value="Declaration"/>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="HolderOfTheTransitProcedure" type="ctypes:HolderOfTheTransitProcedureType03">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <description value="HOLDER OF THE TRANSIT PROCEDURE"/>
+                            <optionality value="R"/>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Representative" type="ctypes:RepresentativeType01">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <description value="REPRESENTATIVE"/>
+                            <optionality value="O"/>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

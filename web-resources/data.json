@@ -1,0 +1,739 @@
+{
+	"REST": {
+		"title": "REST",
+		"anchor": "REST",
+		"cardText": "",
+		"class": "section-title",
+		"cards": [
+			{
+				"link": "documents/rest-endpoints-live.txt",
+				"description": "REST Endpoints - LIVE",
+				"anchor": "REST_Endpoints_Live",
+				"type": "TXT",
+				"environment": "Live",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/rest-endpoints-PIT4.txt",
+				"description": "REST Endpoints - PIT4",
+				"anchor": "REST_Endpoints_PIT4",
+				"type": "TXT",
+				"environment": "PIT4 - Next Version",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			}
+		]
+	},
+
+	"SOAP-WSDLs": {
+		"title": "SOAP WSDLs",
+		"anchor": "SOAP_WSDLs",
+		"class": "section-title",
+		"cardText": "<p>SOAP Web Service definitions for services relevant to NCTS-P5.</p>",
+		"cards": [
+			{
+				"link": "documents/WSDLs/ncts-submit.wsdl",
+				"description": "NCTS Submit",
+				"anchor": "ncts_submit_wsdl",
+				"type": "WSDL",
+				"environment": "All versions",
+				"dateLastUpdated": "25/07/2023",
+				"category": "download"
+			},
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/mailboxcollect.wsdl",
+				"description": "Mailbox Collect",
+				"anchor": "mailbox_collect_wsdl",
+				"type": "WSDL",
+				"environment": "All versions",
+				"dateLastUpdated": "10/08/2023",
+				"category": "LINK"
+			},
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/mailboxacknowledge.wsdl",
+				"description": "Mailbox Acknowledge",
+				"anchor": "mailbox_acknowledge_wsdl",
+				"type": "WSDL",
+				"environment": "All versions",
+				"dateLastUpdated": "10/08/2023",
+				"category": "LINK"
+			},
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/transactionid.wsdl",
+				"description": "Transaction ID",
+				"anchor": "transaction_id_wsdl",
+				"type": "WSDL",
+				"environment": "All versions",
+				"dateLastUpdated": "11/03/2020",
+				"category": "LINK"
+			}
+		]
+	},
+
+	"ROS-XSDs": {
+		"title": "ROS XSDs",
+		"anchor": "ROS_XSDs",
+		"class": "section-title",
+		"cardText": "<p>General schemas required to interact with ROS.</p>",
+		"cards": [
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/customs/collectrequest/v1/schema.xsd",
+				"description": "Mailbox Collect Request",
+				"anchor": "mailbox_Collect_Request",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "01/02/2007",
+				"category": "download"
+			},
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/customs/collectresponse/v1/schema.xsd",
+				"description": "Mailbox Collect Response",
+				"anchor": "mailbox_Collect_Response",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "01/02/2007",
+				"category": "download"
+			},
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/customs/acknowledgerequest/v1/schema.xsd",
+				"description": "Mailbox Acknowledge Request",
+				"anchor": "mailbox_Acknowledge_Request",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "01/02/2007",
+				"category": "download"
+			},
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/customs/acknowledgeresponse/v1/schema.xsd",
+				"description": "Mailbox Acknowledge Response",
+				"anchor": "mailbox_Acknowledge_Response",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "01/02/2007",
+				"category": "download"
+			},
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/customs/messageacknowledgement/v1/schema.xsd",
+				"description": "Message Acknowledgement",
+				"anchor": "message_Acknowledgement",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "09/07/2008",
+				"category": "download"
+			},
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/customs/transactionidrequest/v1/schema.xsd",
+				"description": "Transaction ID Request",
+				"anchor": "transaction_Id_Request",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "16/06/2008",
+				"category": "download"
+			},
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/customs/transactionidresponse/v1/schema.xsd",
+				"description": "Transaction ID Response",
+				"anchor": "transaction_Id_Response",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "16/06/2008",
+				"category": "download"
+			},
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/customs/customstypes/v1/schema.xsd",
+				"description": "Customs Types schema",
+				"anchor": "customs_Types",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "29/10/2009",
+				"category": "download"
+			}
+		]
+	},
+
+	"NCTS-P5-XSDs-DDNTA": {
+		"title": "NCTS-P5 XSDs - DDNTA",
+		"anchor": "NCTS_P5_XSDs_DDNTA",
+		"class": "section-title",
+		"cardText": "<p>Schemas for NCTS-P5 DDNTA messages.</p>",
+		"cards": [
+			{
+				"link": "documents/ncts-xsds/DDNTA/CHANGELOG",
+				"description": "Schema Changelog for DDNTA XSDs",
+				"anchor": "Changelog_DDNTA_XSDs",
+				"type": "TXT",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC004C.xsd",
+				"description": "CC004C - IE004 Amendment Acceptance",
+				"anchor": "CC004C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC007C.xsd",
+				"description": "CC007C - IE007 Arrival Notification",
+				"anchor": "CC007C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC009C.xsd",
+				"description": "CC009C - IE009 Invalidation Decision",
+				"anchor": "CC009C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC013C.xsd",
+				"description": "CC013C - IE013 Declaration Amendment",
+				"anchor": "CC013C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC014C.xsd",
+				"description": "CC014C - IE014 Declaration Invalidation Request",
+				"anchor": "CC014C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC015C.xsd",
+				"description": "CC015C - IE015 Declaration Data",
+				"anchor": "CC015C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC019C.xsd",
+				"description": "CC019C - IE019 Discrepancies",
+				"anchor": "CC019C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC022C.xsd",
+				"description": "CC022C - IE022 Notification to Amend Declaration",
+				"anchor": "CC022C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC023C.xsd",
+				"description": "CC023C - IE023 Guarantor Notification",
+				"anchor": "CC023C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC025C.xsd",
+				"description": "CC025C - IE025 Goods Release Notification",
+				"anchor": "CC025C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC026C.xsd",
+				"description": "CC026C - IE026 Guarantee Access Codes",
+				"anchor": "CC026C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC028C.xsd",
+				"description": "CC028C - IE028 MRN Allocated",
+				"anchor": "CC028C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC029C.xsd",
+				"description": "CC029C - IE029 Release for Transit",
+				"anchor": "CC029C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC034C.xsd",
+				"description": "CC034C - IE034 Query on Guarantees",
+				"anchor": "CC034C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC035C.xsd",
+				"description": "CC035C - IE035 Recovery Notification",
+				"anchor": "CC035C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC037C.xsd",
+				"description": "CC037C - IE037 Response Query on Guarantees",
+				"anchor": "CC037C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC043C.xsd",
+				"description": "CC043C - IE043 Unloading Permission",
+				"anchor": "CC043C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC044C.xsd",
+				"description": "CC044C - IE044 Unloading Remarks",
+				"anchor": "CC044C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC045C.xsd",
+				"description": "CC045C - IE045 Write-off Notification",
+				"anchor": "CC045C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC051C.xsd",
+				"description": "CC051C - IE051 No Release for Transit",
+				"anchor": "CC051C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC054C.xsd",
+				"description": "CC054C - IE054 Request of Release",
+				"anchor": "CC054C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC055C.xsd",
+				"description": "CC055C - IE055 Guarantee not Valid",
+				"anchor": "CC055C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC056C.xsd",
+				"description": "CC056C - IE056 Rejection from Office of Departure",
+				"anchor": "CC056C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC057C.xsd",
+				"description": "CC057C - IE057 Rejection from Office of Destination",
+				"anchor": "CC057C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC060C.xsd",
+				"description": "CC060C - IE060 Control Decision Notification",
+				"anchor": "CC060C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC140C.xsd",
+				"description": "CC140C - IE140 Request on Non-arrived Movement",
+				"anchor": "CC140C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC141C.xsd",
+				"description": "CC141C - IE141 Information About Non-arrived Movement",
+				"anchor": "CC141C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC170C.xsd",
+				"description": "CC170C - IE170 Presentation Notification for Pre-lodged Declaration",
+				"anchor": "CC170C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC128C.xsd",
+				"description": "CC128C - IE182 Forwarded Incident Notification to ED",
+				"anchor": "CC128C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC224C.xsd",
+				"description": "CC224C - IE224 Individual Guarantee Voucher Sold",
+				"anchor": "CC224C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC225C.xsd",
+				"description": "CC225C - IE225 Guarantee Update Notification",
+				"anchor": "CC225C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC228C.xsd",
+				"description": "CC228C - IE228 Comprehensive Cancellation Liability Liberation",
+				"anchor": "CC228C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC229C.xsd",
+				"description": "CC229C - IE229 Individual Guarantee Voucher Revocation Notification",
+				"anchor": "CC229C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC231C.xsd",
+				"description": "CC231C - IE231 Comprehensive Guarantee Cancellation Notification",
+				"anchor": "CC231C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC906C.xsd",
+				"description": "CC906C - IE906 Functional Nack",
+				"anchor": "CC906C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC917C.xsd",
+				"description": "CC917C - IE917 XML Nack",
+				"anchor": "CC917C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/CC928C.xsd",
+				"description": "CC928C - IE928 Positive Acknowledge",
+				"anchor": "CC928C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/ctypes.xsd",
+				"description": "DDNTA CTypes",
+				"anchor": "ctypes",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/doc.xsd",
+				"description": "DDNTA Doc",
+				"anchor": "doc",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/htypes.xsd",
+				"description": "DDNTA HTypes",
+				"anchor": "htypes",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/stypes.xsd",
+				"description": "DDNTA STypes",
+				"anchor": "stypes",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/DDNTA/tcl.xsd",
+				"description": "DDNTA Tcl",
+				"anchor": "tcl",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			}
+		]
+	},
+
+	"NCTS-P5-XSDs-TR": {
+		"title": "NCTS-P5 XSDs - TR",
+		"anchor": "NCTS_P5_XSDs_TR",
+		"class": "section-title",
+		"cardText": "<p>Schemas for NCTS-P5 TR messages.</p>",
+		"cards": [
+			{
+				"link": "documents/ncts-xsds/TR/CHANGELOG",
+				"description": "Schema Changelog for TR XSDs",
+				"anchor": "Changelog_TR_XSDs",
+				"type": "TXT",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR015V.xsd",
+				"description": "TR015V - Transit Pre-lodged Declaration Acknowledgement",
+				"anchor": "TR015V",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR054C.xsd",
+				"description": "TR054C - Request for Advice",
+				"anchor": "TR054C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR062C.xsd",
+				"description": "TR062C - Request Declaration Amendment",
+				"anchor": "TR062C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR064C.xsd",
+				"description": "TR064C - Request Declaration Invalidation",
+				"anchor": "TR064C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR082C.xsd",
+				"description": "TR082C - Documents Request",
+				"anchor": "TR082C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR083C.xsd",
+				"description": "TR083C - Documents Received",
+				"anchor": "TR083C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR084C.xsd",
+				"description": "TR084C - Request Document Presentation",
+				"anchor": "TR084C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR200C.xsd",
+				"description": "TR200C - Guarantee Check",
+				"anchor": "TR200C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR201C.xsd",
+				"description": "TR201C - Guarantee Check Result",
+				"anchor": "TR201C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR862C.xsd",
+				"description": "TR862C - Guarantee Check Result",
+				"anchor": "TR862C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR864C.xsd",
+				"description": "TR864C - Declaration Invalidation Request Cancellation",
+				"anchor": "TR864C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR882C.xsd",
+				"description": "TR882C - Document Upload Request Cancellation",
+				"anchor": "TR882C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/TR884C.xsd",
+				"description": "TR884C - Document Presentation Request Cancellation",
+				"anchor": "TR884C",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/trader_annotations.xsd",
+				"description": "Trader Annotations",
+				"anchor": "trader_annotations",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/trader_ctypes.xsd",
+				"description": "Trader CTypes",
+				"anchor": "trader_ctypes",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/trader_doc.xsd",
+				"description": "Trader Doc",
+				"anchor": "trader_doc",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/trader_htypes.xsd",
+				"description": "Trader HTypes",
+				"anchor": "trader_htypes",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/trader_stypes.xsd",
+				"description": "Trader STypes",
+				"anchor": "trader_stypes",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			},
+			{
+				"link": "documents/ncts-xsds/TR/trader_tcl.xsd",
+				"description": "Trader Tcl",
+				"anchor": "trader_tcl",
+				"type": "Schema",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			}
+		]
+	}
+}

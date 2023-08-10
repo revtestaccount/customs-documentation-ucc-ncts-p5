@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://www.ros.ie/schemas/customs/ncts/trader"
+  targetNamespace="http://www.ros.ie/schemas/customs/ncts/trader"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  xmlns:ctypes="http://www.ros.ie/schemas/customs/ncts/trader_ctypes"
+  xmlns:htypes="http://www.ros.ie/schemas/customs/ncts/trader_htypes"
+  xmlns:doc="http://www.ros.ie/schemas/customs/ncts/trader_doc"
+  elementFormDefault="unqualified" 
+  attributeFormDefault="unqualified" 
+  version="51.7.0"
+  vc:minVersion="1.1">
+  
+  <!--================================================================================-->
+  <!--===== Imports                                                                   -->
+  <!--================================================================================-->
+  
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_ctypes" schemaLocation="trader_ctypes.xsd"/>
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_doc" schemaLocation="trader_doc.xsd"/>
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_htypes" schemaLocation="trader_htypes.xsd"/>
+  
+
+  <!--================================================================================-->
+  <!--===== Root Element                                                              -->
+  <!--================================================================================-->
+  <xs:element name="TR054C">
+  <xs:annotation>
+    <xs:documentation>
+      <doc:description value="REQUEST FOR ADVICE" />
+      
+      <!-- 
+        C0250
+        IF <HOLDER OF THE TRANSIT PROCEDURE.Identification number> is PRESENT
+        AND <HOLDER OF THE TRANSIT PROCEDURE.Identification number> is a valid identifier in the
+        European EOS ((Economic Operators Systems) verified by the EU Member State receiving or sending
+        this message), OR is a valid identifier in the DB of the CTC country receiving or sending this message
+        THEN
+        <HOLDER OF THE TRANSIT PROCEDURE.Name> = "N" AND
+        <HOLDER OF THE TRANSIT PROCEDURE-ADDRESS> = "N"
+        ELSE
+        <HOLDER OF THE TRANSIT PROCEDURE.Name> = "R" AND
+        <HOLDER OF THE TRANSIT PROCEDURE-ADDRESS> = "R";
+        IF <CONSIGNMENT-CONSIGNOR.Identification number> is PRESENT
+        AND <CONSIGNMENT-CONSIGNOR.Identification number> is a valid identifier in the European EOS
+        ((Economic Operators Systems) verified by the EU Member State receiving or sending this message),
+        OR is a valid identifier in the DB of the CTC country receiving or sending this message
+        THEN
+        <CONSIGNMENT-CONSIGNOR.Name> = "N" AND
+        <CONSIGNMENT-CONSIGNOR-ADDRESS> = "N"
+        ELSE
+        <CONSIGNMENT-CONSIGNOR.Name> = "R" AND
+        <CONSIGNMENT-CONSIGNOR-ADDRESS> = "R";
+        IF <CONSIGNMENT-CONSIGNEE.Identification number> is PRESENT
+        AND <CONSIGNMENT-CONSIGNEE.Identification number> is a valid identifier in the European EOS
+        ((Economic Operators Systems) verified by the EU Member State receiving or sending this message),
+        OR is a valid identifier in the DB of the CTC country receiving or sending this message
+        THEN
+        <CONSIGNMENT-CONSIGNEE.Name> = "N" AND
+        <CONSIGNMENT-CONSIGNEE-ADDRESS> = "N"
+        ELSE
+        <CONSIGNMENT-CONSIGNEE.Name> = "R" AND
+        <CONSIGNMENT-CONSIGNEE-ADDRESS> = "R";
+        IF <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR.Identification number> is PRESENT
+        AND <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR.Identification number is a valid
+        identifier in the European EOS ((Economic Operators Systems) verified by the EU Member State
+        receiving or sending this message), OR is a valid identifier in the DB of the CTC country receiving or
+        sending this message
+        THEN
+        <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR.Name> = "N" AND
+        <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR-ADDRESS> = "N"
+        ELSE
+        <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR.Name> = "R" AND
+        <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR-ADDRESS> = "R";
+        IF <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE.Identification number> is PRESENT
+        AND <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE.Identification number>
+        is a valid identifier in the European EOS ((Economic Operators Systems) verified by the EU Member
+        State receiving or sending this message), OR is a valid identifier in the DB of the CTC country
+        receiving or sending this message
+        THEN
+        <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE.Name> = "N" AND
+        <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE-ADDRESS> = "N"
+        ELSE
+        <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE.Name> = "R" AND
+        <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE-ADDRESS> = "R";
+        IF <GUARANTOR.Identification number> is PRESENT AND <GUARANTOR.Identification number>
+        is a valid identifier in the European EOS ((Economic Operators Systems) verified by the EU Member
+        State receiving or sending this message), OR is a valid identifier in the DB of the CTC country
+        receiving or sending this message
+        THEN
+        <GUARANTOR.Name> = "N" AND
+        <GUARANTOR-ADDRESS> = "N"
+        ELSE
+        <GUARANTOR.Name> = "R" AND
+        <GUARANTOR-ADDRESS> = "R"
+      -->
+      <doc:condition name="C0250" />
+      
+      <!-- 
+        C0505
+        IF <HOLDER OF THE TRANSIT PROCEDURE-ADDRESS.Country> is in SET
+        CL505(CountryWithoutZip)
+        THEN <HOLDER OF THE TRANSIT PROCEDURE-ADDRESS.Postcode> = "O"
+        ELSE <HOLDER OF THE TRANSIT PROCEDURE-ADDRESS.Postcode> = "R";
+        IF <CONSIGNMENT-CONSIGNOR-ADDRESS.Country> is in SET CL505 (CountryWithoutZip)
+        THEN <CONSIGNMENT-CONSIGNOR-ADDRESS.Postcode> = "O"
+        ELSE <CONSIGNMENT-CONSIGNOR-ADDRESS.Postcode> = "R";
+        IF <CONSIGNMENT-CONSIGNEE-ADDRESS.Country> is in SET CL505 (CountryWithoutZip)
+        THEN <CONSIGNMENT-CONSIGNEE-ADDRESS.Postcode> = "O"
+        ELSE <CONSIGNMENT-CONSIGNEE-ADDRESS.Postcode> = "R";
+        IF <CONSIGNMENT-INCIDENT-LOCATION.Country> is in SET CL505 (CountryWithoutZip)
+        THEN <CONSIGNMENT-INCIDENT-LOCATION-ADDRESS.Postcode> = "O"
+        ELSE <CONSIGNMENT-INCIDENT-LOCATION-ADDRESS.Postcode> = "R";
+        IF <CONSIGNMENT-LOCATION OF GOODS-ADDRESS.Country> is in SET CL505
+        (CountryWithoutZip)
+        THEN <CONSIGNMENT-LOCATION OF GOODS-ADDRESS.Postcode> = "O"
+        ELSE <CONSIGNMENT-LOCATION OF GOODS-ADDRESS.Postcode> = "R";
+        IF <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR-ADDRESS.Country> is in SET CL505
+        (CountryWithoutZip)
+        THEN <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR-ADDRESS.Postcode> = "O"
+        ELSE <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNOR-ADDRESS.Postcode> = "R";
+        IF <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE-ADDRESS.Country> is in SET CL505
+        (CountryWithoutZip)
+        THEN <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE-ADDRESS.Postcode> = "O"
+        ELSE <CONSIGNMENT-HOUSE CONSIGNMENT-CONSIGNEE-ADDRESS.Postcode> = "R";
+        IF <GUARANTOR-ADDRESS.Country> is in SET CL505 (CountryWithoutZip)
+        THEN <GUARANTOR-ADDRESS.Postcode> = "O"
+        ELSE <GUARANTOR-ADDRESS.Postcode> = "R";
+        IF <GUARANTEE REFERENCE-GUARANTOR-ADDRESS.Country> is in SET CL505
+        (CountryWithoutZip)
+        THEN <GUARANTEE REFERENCE-GUARANTOR-ADDRESS.Postcode> = "O"
+        ELSE <GUARANTEE REFERENCE-GUARANTOR-ADDRESS.Postcode> = "R";
+        IF <GUARANTEE REFERENCE-OWNER-ADDRESS.Country> is in SET CL505 (CountryWithoutZip)
+        THEN <GUARANTEE REFERENCE-OWNER-ADDRESS.Postcode> = "O"
+        ELSE <GUARANTEE REFERENCE-OWNER-ADDRESS.Postcode> = "R";
+        IF <CONSIGNMENT-CONSIGNEE (ACTUAL)-ADDRESS.Country> is in SET CL505
+        (CountryWithoutZip)
+        THEN <CONSIGNMENT-CONSIGNEE(ACTUAL)-ADDRESS.Postcode> = "O"
+        ELSE <CONSIGNMENT-CONSIGNEE(ACTUAL)-ADDRESS.Postcode> = "R"
+      -->
+      <doc:condition name="C0505" />
+      
+      <!-- 
+        C0511
+        IF <Message type> is in SET CL610 (MessageWithCorrelationIdentifier)
+        THEN <Correlation identifier> = "R"
+        ELSE IF <Message type> is in SET CL385 (MessageTypeWithoutHeader)
+        THEN <Correlation identifier> = "N"
+        ELSE <Correlation identifier> = "O"
+      -->
+      <doc:condition name="C0511" />
+      
+      <!-- 
+        C0904
+        IF <TRANSIT OPERATION.Declaration type> is PRESENT
+        THEN
+        IF <TRANSIT OPERATION.Declaration type> is EQUAL to 'TIR'
+        THEN <HOLDER OF THE TRANSIT PROCEDURE.TIR holder identification number> = "R"
+        ELSE <HOLDER OF THE TRANSIT PROCEDURE.TIR holder identification number> = "N"
+        ELSE
+        IF <CC015C-TRANSIT OPERATION.Declaration type> is EQUAL to 'TIR' OR <CC013C-TRANSIT
+        OPERATION.Declaration type> is EQUAL to 'TIR'
+        THEN <HOLDER OF THE TRANSIT PROCEDURE.TIR holder identification number> = "R"
+        ELSE <HOLDER OF THE TRANSIT PROCEDURE.TIR holder identification number> = "N"
+      -->
+      <doc:condition name="C0904" />
+      
+      <!-- 
+        R0008
+        <Correlation identifier> shall be EQUAL to the <Message identification> of the request/rejected
+        message.
+      -->
+      <doc:rule name="R0008" />
+      
+      <!-- 
+        R0850
+        IF sender is in EU (CL010 (CountryCodesCommunity))
+        THEN the value must be a valid EORI or TCUIN (validated by receiver, if located in EU),
+        ELSE (sender is not in EU) the value must be a TIN number (validated by the message sender only).
+        The EORI/TCUIN values shall comply with the following pattern: <xs:pattern value=" [A-Z]{2}[\x21-
+        \x7E]{1,15}"/>
+      -->
+      <doc:rule name="R0850" />
+      
+    </xs:documentation>
+  </xs:annotation>
+  <!--================================================================================-->
+  <!--===== Root Element Content                                                      -->
+  <!--================================================================================-->
+    <xs:complexType>
+      <xs:sequence>
+      <xs:group ref="htypes:MESSAGE" />
+      <xs:element name="TransitOperation" type="ctypes:TransitOperationType101">
+        <xs:annotation>
+          <xs:documentation>
+            <doc:description value="TRANSIT OPERATION" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomsOfficeOfDeparture" type="ctypes:CustomsOfficeOfDepartureType03">
+        <xs:annotation>
+          <xs:documentation>
+            <doc:description value="CUSTOMS OFFICE OF DEPARTURE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HolderOfTheTransitProcedure" type="ctypes:HolderOfTheTransitProcedureType19">
+        <xs:annotation>
+          <xs:documentation>
+            <doc:description value="HOLDER OF THE TRANSIT PROCEDURE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  </xs:element>
+</xs:schema>

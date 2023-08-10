@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://www.ros.ie/schemas/customs/ncts/trader"
+  targetNamespace="http://www.ros.ie/schemas/customs/ncts/trader"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  xmlns:ctypes="http://www.ros.ie/schemas/customs/ncts/trader_ctypes"
+  xmlns:htypes="http://www.ros.ie/schemas/customs/ncts/trader_htypes"
+  xmlns:doc="http://www.ros.ie/schemas/customs/ncts/trader_doc"
+  elementFormDefault="unqualified" 
+  attributeFormDefault="unqualified" 
+  version="51.7.0"
+  vc:minVersion="1.1">
+  
+  <!--================================================================================-->
+  <!--===== Imports                                                                   -->
+  <!--================================================================================-->
+  
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_ctypes" schemaLocation="trader_ctypes.xsd"/>
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_doc" schemaLocation="trader_doc.xsd"/>
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_htypes" schemaLocation="trader_htypes.xsd"/>
+  
+
+  <!--================================================================================-->
+  <!--===== Root Element                                                              -->
+  <!--================================================================================-->
+  <xs:element name="TR062C">
+  <xs:annotation>
+    <xs:documentation>
+      <doc:description value="REQUEST DECLARATION AMENDMENT" />
+      
+      <!-- 
+        C0511
+        IF <Message type> is in SET CL610 (MessageWithCorrelationIdentifier)
+        THEN <Correlation identifier> = "R"
+        ELSE IF <Message type> is in SET CL385 (MessageTypeWithoutHeader)
+        THEN <Correlation identifier> = "N"
+        ELSE <Correlation identifier> = "O"
+      -->
+      <doc:condition name="C0511" />
+      
+      <!-- 
+        R0008
+        <Correlation identifier> shall be EQUAL to the <Message identification> of the request/rejected
+        message.
+      -->
+      <doc:rule name="R0008" />
+      
+    </xs:documentation>
+  </xs:annotation>
+  <!--================================================================================-->
+  <!--===== Root Element Content                                                      -->
+  <!--================================================================================-->
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="htypes:MESSAGE" />
+        <xs:element name="Declaration" type="ctypes:DeclarationType102">
+          <xs:annotation>
+            <xs:documentation>
+              <doc:description value="DECLARATION" />
+              <optionality value="R" />
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+  </xs:complexType>
+  </xs:element>
+</xs:schema>

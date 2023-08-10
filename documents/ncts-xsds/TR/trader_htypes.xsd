@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://www.ros.ie/schemas/customs/ncts/trader_htypes" 
+  targetNamespace="http://www.ros.ie/schemas/customs/ncts/trader_htypes"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  xmlns:annot="http://www.ros.ie/schemas/customs/ncts/trader_annotations"
+  xmlns:doc="http://www.ros.ie/schemas/customs/ncts/trader_doc"
+  xmlns:stypes="http://www.ros.ie/schemas/customs/ncts/trader_stypes"
+  xmlns:tcl="http://www.ros.ie/schemas/customs/ncts/trader_tcl"
+  elementFormDefault="unqualified" 
+  attributeFormDefault="unqualified" 
+  version="51.7.0" 
+  vc:minVersion="1.1"> 
+  <!--=======================================================-->
+  <!--============= Message Header Definition  ==============-->
+  <!--=======================================================-->
+
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_annotations" schemaLocation="trader_annotations.xsd" />
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_doc" schemaLocation="trader_doc.xsd" />
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_stypes" schemaLocation="trader_stypes.xsd" />
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_tcl" schemaLocation="trader_tcl.xsd"/>
+  
+  <xs:group name="MESSAGE">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:description>Used by all messages</doc:description>
+        <annot:hiddenonmode name="view,create,edit,partialedit,prebuild" />
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="messageSender" type="MessageSenderContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message sender" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageRecipient" type="MessageRecipientContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message recipient" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Preparation date and time" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageIdentification" type="MessageIdentificationContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message identification" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageType" type="xs:token">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message type" />
+            <codeList name="MessageTypes" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <doc:description value="Correlation identifier" />
+            <doc:condition name="C0511"/>
+            <doc:rule name="R0008"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <!--================================================================================-->
+  <!--===== MessageIdentification                                                     -->
+  <!--================================================================================-->
+  <xs:simpleType name="MessageIdentificationContentType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value=".{1,35}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--================================================================================-->
+  <!--===== MessageRecipient                                                          -->
+  <!--================================================================================-->
+  <xs:simpleType name="MessageRecipientContentType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value=".{1,35}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--================================================================================-->
+  <!--===== MessageSender                                                             -->
+  <!--================================================================================-->
+  <xs:simpleType name="MessageSenderContentType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value=".{1,35}" />
+    </xs:restriction>
+  </xs:simpleType>
+   <!--================================================================================-->
+  <!--===== CorrelationIdentifier                                                     -->
+  <!--================================================================================-->
+  <xs:simpleType name="CorrelationIdentifierContentType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value=".{1,35}" />
+    </xs:restriction>
+  </xs:simpleType>
+   <!--================================================================================-->
+  <!--===== PreparationDateAndTime                                                    -->
+  <!--================================================================================-->
+  <xs:simpleType name="PreparationDateAndTimeContentType">
+    <xs:restriction base="xs:dateTime">
+      <xs:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

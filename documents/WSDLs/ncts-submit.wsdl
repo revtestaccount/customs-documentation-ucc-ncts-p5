@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+
+Document History:
+
+======== Version 0.1 ====================================
+	i. Document Created 19/04/2023
+
+======== Version 0.2 ====================================
+	i. Document updated 25/07/2023
+		Added back missing namespaces definitions
+-->
+
+<wsdl:definitions name="NctsWebService" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://www.ros.ie/schemas/customs/ncts/v1/nctsSubmit" 
+	targetNamespace="http://www.ros.ie/schemas/customs/ncts/v1/nctsSubmit" 
+												   
+	xmlns:IE007="http://ncts.dgtaxud.ec"
+	xmlns:IE013="http://ncts.dgtaxud.ec"
+	xmlns:IE014="http://ncts.dgtaxud.ec"
+	xmlns:IE015="http://ncts.dgtaxud.ec"
+	xmlns:IE026="http://ncts.dgtaxud.ec"
+	xmlns:IE034="http://ncts.dgtaxud.ec"
+	xmlns:IE044="http://ncts.dgtaxud.ec"
+	xmlns:IE054="http://ncts.dgtaxud.ec"
+	xmlns:IE141="http://ncts.dgtaxud.ec"
+	xmlns:IE170="http://ncts.dgtaxud.ec"
+	xmlns:IE224="http://ncts.dgtaxud.ec" 
+	xmlns:TR083="http://www.ros.ie/schemas/customs/ncts/trader"
+	xmlns:msgackres="http://www.ros.ie/schemas/customs/messageacknowledgement/v1" 
+	>
+
+
+
+	<wsdl:types>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC007C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC013C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC014C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC015C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC026C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC034C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC044C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC054C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC141C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC170C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://ncts.dgtaxud.ec" schemaLocation="customs/ncts/v1/informationexchange/CC224C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader" schemaLocation="customs/ncts/v1/informationexchange/TR083C.xsd"/></xs:schema>
+		<xs:schema><xs:import namespace="http://www.ros.ie/schemas/customs/messageacknowledgement/v1" schemaLocation="customs/messageacknowledgement/v1/schema.xsd"/></xs:schema>
+	</wsdl:types>
+		
+		
+
+	<wsdl:message name="IE007"><wsdl:part name="parameters" element="IE007:CC007C"/></wsdl:message>
+	<wsdl:message name="IE013"><wsdl:part name="parameters" element="IE013:CC013C"/></wsdl:message>
+	<wsdl:message name="IE014"><wsdl:part name="parameters" element="IE014:CC014C"/></wsdl:message>
+	<wsdl:message name="IE015"><wsdl:part name="parameters" element="IE015:CC015C"/></wsdl:message>
+	<wsdl:message name="IE026"><wsdl:part name="parameters" element="IE026:CC026C"/></wsdl:message>
+	<wsdl:message name="IE034"><wsdl:part name="parameters" element="IE034:CC034C"/></wsdl:message>
+	<wsdl:message name="IE044"><wsdl:part name="parameters" element="IE044:CC044C"/></wsdl:message>
+	<wsdl:message name="IE054"><wsdl:part name="parameters" element="IE054:CC054C"/></wsdl:message>
+	<wsdl:message name="IE141"><wsdl:part name="parameters" element="IE141:CC141C"/></wsdl:message>
+	<wsdl:message name="IE170"><wsdl:part name="parameters" element="IE170:CC170C"/></wsdl:message>
+	<wsdl:message name="IE224"><wsdl:part name="parameters" element="IE224:CC224C"/></wsdl:message>
+	<wsdl:message name="TR083"><wsdl:part name="parameters" element="TR083:TR083C"/></wsdl:message>
+	<wsdl:message name="NctsResponse"><wsdl:part name="parameters" element="msgackres:MessageAcknowledgement"/></wsdl:message>
+	
+	
+	
+	<wsdl:portType name="NctsSubmitPortType">
+		<wsdl:operation name="IE007SubmitOperation"><wsdl:input message="IE007"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="IE013SubmitOperation"><wsdl:input message="IE013"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="IE014SubmitOperation"><wsdl:input message="IE014"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="IE015SubmitOperation"><wsdl:input message="IE015"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="IE026SubmitOperation"><wsdl:input message="IE026"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="IE034SubmitOperation"><wsdl:input message="IE034"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="IE044SubmitOperation"><wsdl:input message="IE044"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="IE054SubmitOperation"><wsdl:input message="IE054"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="IE141SubmitOperation"><wsdl:input message="IE141"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="IE170SubmitOperation"><wsdl:input message="IE170"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="IE224SubmitOperation"><wsdl:input message="IE224"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+		<wsdl:operation name="TR083SubmitOperation"><wsdl:input message="TR083"/><wsdl:output message="NctsResponse"/></wsdl:operation>
+	</wsdl:portType>
+
+	
+	
+	<wsdl:binding name="NctsSubmitSoapBinding" type="NctsSubmitPortType">
+		<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="IE007SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="IE013SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="IE014SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="IE015SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="IE026SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="IE034SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="IE044SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="IE054SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="IE141SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="IE170SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="IE224SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+		<wsdl:operation name="TR083SubmitOperation"><soap12:operation/><wsdl:input><soap12:body use="literal"/></wsdl:input><wsdl:output><soap12:body use="literal"/></wsdl:output></wsdl:operation>
+	</wsdl:binding>
+
+	
+	
+	<wsdl:service name="NctsSubmitService">
+		<wsdl:port name="NctsSubmitPort" binding="NctsSubmitSoapBinding">
+			<soap12:address location="https://www.ros.ie/customs/webservice/v1/soap/nctsSubmit" />
+		</wsdl:port>
+	</wsdl:service>
+	
+	
+</wsdl:definitions>

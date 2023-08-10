@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns="http://www.ros.ie/schemas/customs/ncts/trader_annotations"
+    targetNamespace="http://www.ros.ie/schemas/customs/ncts/trader_annotations"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="unqualified"
+    attributeFormDefault="qualified"
+    version="1.0">
+    
+    <!--=========================================-->
+    <!--      DOCUMENTATION ELEMENTS             -->
+    <!--=========================================-->
+    
+    
+    <xs:element name="taricRelation">
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="attachment"/>
+    
+    <xs:element name="attachmentList"/>
+    
+    <xs:element name="hiddenonmode">
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <!-- view, create, edit, partialEdit  -->
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="readonlyonmode">
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="nonErasable"/>
+    
+    <xs:element name="textboxwithsearch">
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <!-- tariff, decision, customsOffice ... -->
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="autocompletebox">
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="indexRelated">
+        <xs:complexType>
+            <xs:attribute name="value" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="describedBy">
+        <xs:complexType>
+            <xs:attribute name="value" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="mapToDeclaration">
+        <xs:complexType>
+            <xs:attribute name="value" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="sourceMsgType">
+        <xs:complexType>
+            <xs:attribute name="value" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="businessKey">
+        <xs:complexType>
+            <xs:attribute name="value" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="lrn"/>
+    
+    <xs:element name="readonlybasedon">
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="textarea"/>
+</xs:schema>

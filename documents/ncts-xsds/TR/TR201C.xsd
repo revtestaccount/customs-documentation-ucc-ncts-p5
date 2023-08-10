@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://www.ros.ie/schemas/customs/ncts/trader"
+  targetNamespace="http://www.ros.ie/schemas/customs/ncts/trader"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  xmlns:ctypes="http://www.ros.ie/schemas/customs/ncts/trader_ctypes"
+  xmlns:htypes="http://www.ros.ie/schemas/customs/ncts/trader_htypes"
+  xmlns:doc="http://www.ros.ie/schemas/customs/ncts/trader_doc"
+  elementFormDefault="unqualified" 
+  attributeFormDefault="unqualified" 
+  version="51.7.0"
+  vc:minVersion="1.1">
+  
+  <!--================================================================================-->
+  <!--===== Imports                                                                   -->
+  <!--================================================================================-->
+  
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_ctypes" schemaLocation="trader_ctypes.xsd"/>
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_doc" schemaLocation="trader_doc.xsd"/>
+  <xs:import namespace="http://www.ros.ie/schemas/customs/ncts/trader_htypes" schemaLocation="trader_htypes.xsd"/>
+
+  <!--================================================================================-->
+  <!--===== Root Element                                                              -->
+  <!--================================================================================-->
+  <xs:element name="TR201C">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:description value="GUARANTEE CHECK RESULT" />
+        
+        <!-- 
+          C0417
+          IF <GUARANTEE-GUARANTEE REFERENCE-INVALID GUARANTEE REASON.Code> is EQUAL to
+          ‘G01’
+          THEN <GUARANTEE-GUARANTEE REFERENCE-CUSTOMS OFFICE OF GUARANTEE> = "O"
+          ELSE <GUARANTEE-GUARANTEE REFERENCE-CUSTOMS OFFICE OF GUARANTEE> = "R"
+        -->
+        <doc:condition name="C0417" />
+        
+        <!-- 
+          C0511
+          IF <Message type> is in SET CL610 (MessageWithCorrelationIdentifier)
+          THEN <Correlation identifier> = "R"
+          ELSE IF <Message type> is in SET CL385 (MessageTypeWithoutHeader)
+          THEN <Correlation identifier> = "N"
+          ELSE <Correlation identifier> = "O"
+        -->
+        <doc:condition name="C0511" />
+        
+        <!-- 
+          R0008
+          <Correlation identifier> shall be EQUAL to the <Message identification> of the request/rejected
+          message.
+        -->
+        <doc:rule name="R0008" />
+        
+        <!-- 
+          R0028
+          The structure of this Data Item is validated as specified in DDCOM. The check digit must follow the
+          ISO 6346 standard.
+        -->
+        <doc:condition name="R0028" />
+        
+        <!-- 
+          R0318
+          IF <GUARANTEE.Guarantee type> is EQUAL to '4'
+          THEN the format of <GUARANTEE-GUARANTEE REFERENCE.GRN> is 'an24'
+          ELSE the format of <GUARANTEE-GUARANTEE REFERENCE.GRN> is 'an17'
+        -->
+        <doc:condition name="R0318" />
+        
+        <!-- 
+          R0987
+          Each <Sequence number> is unique for the Data Group it belongs to. The sequence numbers shall be
+          sequential, starting from '1' for the first iteration of the Data Group and increasing by '1' for each
+          iteration.
+        -->
+        <doc:condition name="R0987" />
+        
+        <!-- 
+          T1120
+          IF <Decisive Date> is LESS than or EQUAL to the <L3endDate> the format of data items <Message
+          identification> AND <Correlation identifier> shall be restricted to an..14
+        -->
+        <doc:rule name="T1120" />
+        
+      </xs:documentation>
+    </xs:annotation>
+  <!--================================================================================-->
+  <!--===== Root Element Content                                                      -->
+  <!--================================================================================-->
+  <xs:complexType>
+    <xs:sequence>
+      <xs:group ref="htypes:MESSAGE" />
+      <xs:element name="TransitOperation" type="ctypes:TransitOperationType43">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="TRANSIT OPERATION" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomsOfficeOfDeparture" type="ctypes:CustomsOfficeOfDepartureType02">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="CUSTOMS OFFICE OF DEPARTURE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HolderOfTheTransitProcedure" type="ctypes:HolderOfTheTransitProcedureType01">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="HOLDER OF THE TRANSIT PROCEDURE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Guarantee" maxOccurs="9" type="ctypes:GuaranteeType07">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="GUARANTEE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  </xs:element>
+</xs:schema>
