@@ -75,8 +75,17 @@
 		"title": "ROS XSDs",
 		"anchor": "ROS_XSDs",
 		"class": "section-title",
-		"cardText": "<p>General schemas required to interact with ROS.</p>",
+		"cardText": "<p>Common schemas required to interact with ROS.</p>",
 		"cards": [
+			{
+				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/ROS_XSDs.zip",
+				"description": "ROS XSDs: all compressed",
+				"anchor": "ros_xsds_all_compressed",
+				"type": "ZIP",
+				"environment": "All versions",
+				"dateLastUpdated": "01/02/2007",
+				"category": "download"
+			},
 			{
 				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/customs/collectrequest/v1/schema.xsd",
 				"description": "Mailbox Collect Request",
