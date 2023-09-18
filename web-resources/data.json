@@ -161,6 +161,24 @@
 		]
 	},
 
+	"NCTS-P5-XSDs-XSDs and WSDL compressed": {
+		"title": "XSDs and WSDL compressed",
+		"anchor": "NCTS_P5_XSDs_compressed",
+		"class": "section-title",
+		"cardText": "<p>ZIP file containing all schemas for NCTS-P5 messages.</p>",
+		"cards": [
+			{
+				"link": "documents/ncts-xsds/NCTS-P5_XSDs.zip",
+				"description": "ZIP file containing all schemas for NCTS-P5 messages.",
+				"anchor": "NCTSP5_xsds_compressed",
+				"type": "ZIP",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
+				"category": "download"
+			}
+		]
+	},
+
 	"NCTS-P5-XSDs-DDNTA": {
 		"title": "NCTS-P5 XSDs - DDNTA",
 		"anchor": "NCTS_P5_XSDs_DDNTA",
