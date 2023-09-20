@@ -6,10 +6,9 @@ Document History:
 
 ======== Version 0.1 ====================================
 	i. Document Created 19/04/2023
-
+	
 ======== Version 0.2 ====================================
-	i. Document updated 25/07/2023
-		Added back missing namespaces definitions
+	i. Namespaces definitions added back 25/07/2023
 -->
 
 <wsdl:definitions name="NctsWebService" 
