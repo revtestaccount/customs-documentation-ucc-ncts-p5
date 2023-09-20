@@ -79,7 +79,7 @@
 		"cards": [
 			{
 				"link": "https://raw.githubusercontent.com/revtestaccount/customs-documentation-ucc-ros-common/master/schemas/ROS_XSDs.zip",
-				"description": "ROS XSDs: all compressed",
+				"description": "Compressed ROS schemas",
 				"anchor": "ros_xsds_all_compressed",
 				"type": "ZIP",
 				"environment": "All versions",
@@ -156,6 +156,24 @@
 				"type": "Schema",
 				"environment": "All versions",
 				"dateLastUpdated": "29/10/2009",
+				"category": "download"
+			}
+		]
+	},
+
+	"NCTS-P5-XSDs-XSDs and WSDL compressed": {
+		"title": "XSDs and WSDL compressed",
+		"anchor": "NCTS_P5_XSDs_compressed",
+		"class": "section-title",
+		"cardText": "<p>ZIP file containing all schemas for NCTS-P5 messages.</p>",
+		"cards": [
+			{
+				"link": "documents/ncts-xsds/NCTS-P5_XSDs.zip",
+				"description": "Compressed NCTS-P5 schemas",
+				"anchor": "NCTSP5_xsds_compressed",
+				"type": "ZIP File",
+				"environment": "All versions",
+				"dateLastUpdated": "08/08/2023",
 				"category": "download"
 			}
 		]
